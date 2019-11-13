@@ -15,7 +15,6 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
 	}
 
 	@IBAction func lineWidthSliderChanged(_ sender: UISlider) {
@@ -24,6 +23,11 @@ class ViewController: UIViewController {
 
 	@IBAction func pointinessChanged(_ sender: UISlider) {
 		chevron.pointHeight = CGFloat(sender.value)
+		chevron.curviness = CGFloat(1 - abs(sender.value) + 0.1)
+	}
+
+	@IBAction func curvinessChanged(_ sender: UISlider) {
+		chevron.curviness = CGFloat(sender.value)
 	}
 }
 

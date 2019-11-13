@@ -58,6 +58,7 @@
 		37A2F3DE237BABA000C1EF3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37A2F3E0237BABA000C1EF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37A2F3E7237BAC1A00C1EF3B /* ChevronAnimatable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ChevronAnimatable.xcodeproj; path = ../ChevronAnimatable.xcodeproj; sourceTree = "<group>"; };
+		37A2F3F5237CA36700C1EF3B /* DemoChevronAnimatble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoChevronAnimatble.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 		37A2F3D1237BABA000C1EF3B /* DemoChevronAnimatble */ = {
 			isa = PBXGroup;
 			children = (
+				37A2F3F5237CA36700C1EF3B /* DemoChevronAnimatble.entitlements */,
 				37A2F3D2237BABA000C1EF3B /* AppDelegate.swift */,
 				37A2F3D4237BABA000C1EF3B /* SceneDelegate.swift */,
 				37A2F3D6237BABA000C1EF3B /* ViewController.swift */,
@@ -361,7 +363,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DemoChevronAnimatble/DemoChevronAnimatble.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = DemoChevronAnimatble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -370,6 +374,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marlonraskin.DemoChevronAnimatble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -379,7 +384,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DemoChevronAnimatble/DemoChevronAnimatble.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = D6VB3396MT;
 				INFOPLIST_FILE = DemoChevronAnimatble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -388,6 +395,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marlonraskin.DemoChevronAnimatble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
