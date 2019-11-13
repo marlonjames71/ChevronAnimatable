@@ -17,9 +17,21 @@ public class ChevronView: UIView {
 		}
 	}
 
+
+	private var _pointHeight: CGFloat = 1
 	/// Valid range is -1...1
-	@IBInspectable public var pointHeight: CGFloat = 1 {
-		didSet {
+	@IBInspectable public var pointHeight: CGFloat {
+		get {
+			_pointHeight
+		}
+		set {
+			if newValue > 1 {
+				_pointHeight = 1
+			} else if newValue < -1 {
+				_pointHeight = -1
+			} else {
+				_pointHeight = newValue
+			}
 			setNeedsDisplay()
 		}
 	}

@@ -32,7 +32,7 @@
                                             <action selector="lineWidthSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Gh6-yF-9nr"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1aa-Ns-0oA">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="-2.5" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="1aa-Ns-0oA">
                                         <rect key="frame" x="-2" y="51" width="318" height="31"/>
                                         <connections>
                                             <action selector="pointinessChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="K1u-xz-qGc"/>
