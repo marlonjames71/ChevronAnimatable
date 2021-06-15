@@ -17,10 +17,11 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 
 		chevron.pointHeight = 1
-		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-			UIView.animate(withDuration: 4) {
-				self.chevron.pointHeight = -1
-			}
+	}
+
+	@IBAction func animateButtonTapped(_ sender: UIButton) {
+		UIView.animate(withDuration: 2) {
+			self.chevron.pointHeight *= -1
 		}
 	}
 
