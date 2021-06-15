@@ -40,7 +40,6 @@ public class ChevronView: UIView {
 		set { progressLayer.lineWidth = newValue }
 	}
 
-
 	/// Valid range is -1...1
 	@IBInspectable public dynamic var pointHeight: CGFloat {
 		get {
@@ -92,11 +91,13 @@ public class ChevronView: UIView {
 		let curveEndX = ((midPoint.x - curveStart.x) * 2) + curveStartX
 		let curveEnd = CGPoint(x: curveEndX, y: curveStartY)
 
-		context.beginPath()
-		context.move(to: startPoint)
-		context.addLine(to: curveStart)
-		context.addQuadCurve(to: curveEnd, control: midPoint)
-		context.addLine(to: endPoint)
+		let path = CGMutablePath()
+		path.move(to: startPoint)
+		path.addLine(to: curveStart)
+		path.addQuadCurve(to: curveEnd, control: midPoint)
+		path.addLine(to: endPoint)
+
+		context.addPath(path)
 		context.setLineWidth(presentationLayer.lineWidth)
 		context.setLineCap(.round)
 		context.setStrokeColor(tintColor.cgColor)
@@ -168,7 +169,6 @@ public class ChevronView: UIView {
 		private class func isAnimationKeySupported(_ key: String) -> Bool {
 			_animatableKeys.contains(key)
 		}
-
 
 		private func currentAnimationContext(in layer: CALayer) -> CABasicAnimation? {
 			/// The UIView animation implementation is private, so to check if the view is animating and
