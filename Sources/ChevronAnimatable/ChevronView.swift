@@ -63,11 +63,14 @@ public class ChevronView: UIView {
 	}
 
 	override public func draw(_ rect: CGRect) {
-		guard let context = UIGraphicsGetCurrentContext() else { return }
+		guard
+			let presentationLayer = layer.presentation() as? ProgressLayer,
+			let context = UIGraphicsGetCurrentContext()
+		else { return }
 
 		// Constants
-		let halfLineWidth = lineWidth / 2
-		let maxY = rect.maxY - lineWidth
+		let halfLineWidth = presentationLayer.lineWidth / 2
+		let maxY = rect.maxY - presentationLayer.lineWidth
 		let minY = halfLineWidth
  		let normalizedHeight = maxY / 2
 
@@ -76,13 +79,13 @@ public class ChevronView: UIView {
 		let endPoint = CGPoint(x: rect.maxX - halfLineWidth, y: rect.midY)
 
 		// Midpoint
-		let midY = (normalizedHeight * -pointHeight) + normalizedHeight + minY
+		let midY = (normalizedHeight * -presentationLayer.pointHeight) + normalizedHeight + minY
 		let midPoint = CGPoint(x: rect.midX, y: midY)
 
 		// Curve Start
-		let curveStartX = midPoint.x - ((midPoint.x - halfLineWidth) * curviness)
+		let curveStartX = midPoint.x - ((midPoint.x - halfLineWidth) * presentationLayer.curviness)
 		let curveStartYOffset = midPoint.y - (bounds.midY)
-		let curveStartY = (curveStartYOffset * (1 - curviness)) + bounds.midY
+		let curveStartY = (curveStartYOffset * (1 - presentationLayer.curviness)) + bounds.midY
 		let curveStart = CGPoint(x: curveStartX, y: curveStartY)
 
 		// Curve End
@@ -94,7 +97,7 @@ public class ChevronView: UIView {
 		context.addLine(to: curveStart)
 		context.addQuadCurve(to: curveEnd, control: midPoint)
 		context.addLine(to: endPoint)
-		context.setLineWidth(lineWidth)
+		context.setLineWidth(presentationLayer.lineWidth)
 		context.setLineCap(.round)
 		context.setStrokeColor(tintColor.cgColor)
 		context.setLineJoin(.round)
@@ -131,7 +134,6 @@ public class ChevronView: UIView {
 			lineWidth = 5
 			pointHeight = 1
 		}
-
 
 		override class func needsDisplay(forKey key: String) -> Bool {
 			if isAnimationKeySupported(key) {
