@@ -15,6 +15,13 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		chevron.pointHeight = 1
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+			UIView.animate(withDuration: 4) {
+				self.chevron.pointHeight = -1
+			}
+		}
 	}
 
 	@IBAction func lineWidthSliderChanged(_ sender: UISlider) {

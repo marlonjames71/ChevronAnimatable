@@ -11,46 +11,49 @@ import UIKit
 @IBDesignable
 public class ChevronView: UIView {
 
-	private var _curviness: CGFloat = 0.25
+	public override class var layerClass: AnyClass {
+		ProgressLayer.self
+	}
+
+	private var progressLayer: ProgressLayer {
+		layer as! ProgressLayer
+	}
+
 	/// Valid range is 0...1
-	@IBInspectable public var curviness: CGFloat {
+	@IBInspectable public dynamic var curviness: CGFloat {
 		get {
-			_curviness
+			progressLayer.curviness
 		}
 		set {
 			if newValue > 1 {
-				_curviness = 1
+				progressLayer.curviness = 1
 			} else if newValue < 0 {
-				_curviness = 0
+				progressLayer.curviness = 0
 			} else {
-				_curviness = newValue
+				progressLayer.curviness = newValue
 			}
-			setNeedsDisplay()
 		}
 	}
 
-	@IBInspectable public var lineWidth: CGFloat = 5 {
-		didSet {
-			setNeedsDisplay()
-		}
+	@IBInspectable public dynamic var lineWidth: CGFloat {
+		get { progressLayer.lineWidth }
+		set { progressLayer.lineWidth = newValue }
 	}
 
 
-	private var _pointHeight: CGFloat = 1
 	/// Valid range is -1...1
-	@IBInspectable public var pointHeight: CGFloat {
+	@IBInspectable public dynamic var pointHeight: CGFloat {
 		get {
-			_pointHeight
+			progressLayer.pointHeight
 		}
 		set {
 			if newValue > 1 {
-				_pointHeight = 1
+				progressLayer.pointHeight = 1
 			} else if newValue < -1 {
-				_pointHeight = -1
+				progressLayer.pointHeight = -1
 			} else {
-				_pointHeight = newValue
+				progressLayer.pointHeight = newValue
 			}
-			setNeedsDisplay()
 		}
 	}
 
@@ -96,5 +99,80 @@ public class ChevronView: UIView {
 		context.setStrokeColor(tintColor.cgColor)
 		context.setLineJoin(.round)
 		context.strokePath()
+	}
+
+	class ProgressLayer: CALayer {
+		@NSManaged var curviness: CGFloat
+		@NSManaged var lineWidth: CGFloat
+		@NSManaged var pointHeight: CGFloat
+
+		override init(layer: Any) {
+			super.init(layer: layer)
+
+			if let layer = layer as? ProgressLayer {
+				curviness = layer.curviness
+				lineWidth = layer.lineWidth
+				pointHeight = layer.pointHeight
+			}
+		}
+
+		override init() {
+			super.init()
+			commonInit()
+		}
+
+		required init?(coder: NSCoder) {
+			super.init(coder: coder)
+			commonInit()
+		}
+
+		private func commonInit() {
+			curviness = 0.25
+			lineWidth = 5
+			pointHeight = 1
+		}
+
+
+		override class func needsDisplay(forKey key: String) -> Bool {
+			if isAnimationKeySupported(key) {
+				return true
+			}
+			return super.needsDisplay(forKey: key)
+		}
+
+		override func action(forKey event: String) -> CAAction? {
+			if ProgressLayer.isAnimationKeySupported(event) {
+				guard let animation = currentAnimationContext(in: self)?.copy() as? CABasicAnimation else {
+					setNeedsDisplay()
+					return nil
+				}
+
+				animation.keyPath = event
+				if let presentation = presentation() {
+					animation.fromValue = presentation.value(forKey: event)
+				}
+				animation.toValue = nil
+				return animation
+			}
+
+			return super.action(forKey: event)
+		}
+
+		private static let _animatableKeys = Set([
+			#keyPath(curviness),
+			#keyPath(lineWidth),
+			#keyPath(pointHeight),
+		])
+		private class func isAnimationKeySupported(_ key: String) -> Bool {
+			_animatableKeys.contains(key)
+		}
+
+
+		private func currentAnimationContext(in layer: CALayer) -> CABasicAnimation? {
+			/// The UIView animation implementation is private, so to check if the view is animating and
+			/// get its property keys we can use the key "backgroundColor" since its been a property of
+			/// UIView which has been forever and returns a CABasicAnimation.
+			action(forKey: #keyPath(backgroundColor)) as? CABasicAnimation
+		}
 	}
 }
