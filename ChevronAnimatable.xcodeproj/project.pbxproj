@@ -29,7 +29,6 @@
 		37A2F3B0237BAB6800C1EF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37A2F3B5237BAB6800C1EF3B /* ChevronAnimatableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChevronAnimatableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A2F3BA237BAB6800C1EF3B /* ChevronAnimatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronAnimatableTests.swift; sourceTree = "<group>"; };
-		37A2F3BC237BAB6800C1EF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37A2F3F3237BAC6600C1EF3B /* ChevronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,9 +51,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3376BA6D2677FB4F0035A010 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				37A2F3AF237BAB6800C1EF3B /* ChevronAnimatable.h */,
+				37A2F3B0237BAB6800C1EF3B /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		37A2F3A2237BAB6700C1EF3B = {
 			isa = PBXGroup;
 			children = (
+				3376BA6D2677FB4F0035A010 /* Support */,
 				37A2F3AE237BAB6800C1EF3B /* ChevronAnimatable */,
 				37A2F3B9237BAB6800C1EF3B /* ChevronAnimatableTests */,
 				37A2F3AD237BAB6800C1EF3B /* Products */,
@@ -73,20 +82,19 @@
 		37A2F3AE237BAB6800C1EF3B /* ChevronAnimatable */ = {
 			isa = PBXGroup;
 			children = (
-				37A2F3AF237BAB6800C1EF3B /* ChevronAnimatable.h */,
-				37A2F3B0237BAB6800C1EF3B /* Info.plist */,
 				37A2F3F3237BAC6600C1EF3B /* ChevronView.swift */,
 			);
-			path = ChevronAnimatable;
+			name = ChevronAnimatable;
+			path = Sources/ChevronAnimatable;
 			sourceTree = "<group>";
 		};
 		37A2F3B9237BAB6800C1EF3B /* ChevronAnimatableTests */ = {
 			isa = PBXGroup;
 			children = (
 				37A2F3BA237BAB6800C1EF3B /* ChevronAnimatableTests.swift */,
-				37A2F3BC237BAB6800C1EF3B /* Info.plist */,
 			);
-			path = ChevronAnimatableTests;
+			name = ChevronAnimatableTests;
+			path = Tests/ChevronAnimatableTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,11 +356,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = D6VB3396MT;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ChevronAnimatable/Info.plist;
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -375,11 +383,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = D6VB3396MT;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ChevronAnimatable/Info.plist;
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -401,7 +409,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6VB3396MT;
-				INFOPLIST_FILE = ChevronAnimatableTests/Info.plist;
+				INFOPLIST_FILE = Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -421,7 +429,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6VB3396MT;
-				INFOPLIST_FILE = ChevronAnimatableTests/Info.plist;
+				INFOPLIST_FILE = Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

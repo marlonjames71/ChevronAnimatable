@@ -3,36 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3376BA71267801150035A010 /* ChevronAnimatable in Frameworks */ = {isa = PBXBuildFile; platformFilter = ios; productRef = 3376BA70267801150035A010 /* ChevronAnimatable */; };
 		37A2F3D3237BABA000C1EF3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2F3D2237BABA000C1EF3B /* AppDelegate.swift */; };
 		37A2F3D5237BABA000C1EF3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2F3D4237BABA000C1EF3B /* SceneDelegate.swift */; };
 		37A2F3D7237BABA000C1EF3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A2F3D6237BABA000C1EF3B /* ViewController.swift */; };
 		37A2F3DA237BABA000C1EF3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A2F3D8237BABA000C1EF3B /* Main.storyboard */; };
 		37A2F3DC237BABA000C1EF3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A2F3DB237BABA000C1EF3B /* Assets.xcassets */; };
 		37A2F3DF237BABA000C1EF3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A2F3DD237BABA000C1EF3B /* LaunchScreen.storyboard */; };
-		37A2F3F0237BAC2A00C1EF3B /* ChevronAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A2F3ED237BAC1B00C1EF3B /* ChevronAnimatable.framework */; };
-		37A2F3F1237BAC2A00C1EF3B /* ChevronAnimatable.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 37A2F3ED237BAC1B00C1EF3B /* ChevronAnimatable.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		37A2F3EC237BAC1B00C1EF3B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37A2F3E7237BAC1A00C1EF3B /* ChevronAnimatable.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37A2F3AC237BAB6800C1EF3B;
-			remoteInfo = ChevronAnimatable;
-		};
-		37A2F3EE237BAC1B00C1EF3B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 37A2F3E7237BAC1A00C1EF3B /* ChevronAnimatable.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 37A2F3B5237BAB6800C1EF3B;
-			remoteInfo = ChevronAnimatableTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		37A2F3F2237BAC2A00C1EF3B /* Embed Frameworks */ = {
@@ -41,7 +23,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				37A2F3F1237BAC2A00C1EF3B /* ChevronAnimatable.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3376BA6F267801080035A010 /* ChevronAnimatable */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ChevronAnimatable; path = ..; sourceTree = "<group>"; };
 		37A2F3CF237BABA000C1EF3B /* DemoChevronAnimatble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoChevronAnimatble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A2F3D2237BABA000C1EF3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A2F3D4237BABA000C1EF3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +39,6 @@
 		37A2F3DB237BABA000C1EF3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37A2F3DE237BABA000C1EF3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37A2F3E0237BABA000C1EF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37A2F3E7237BAC1A00C1EF3B /* ChevronAnimatable.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ChevronAnimatable.xcodeproj; path = ../ChevronAnimatable.xcodeproj; sourceTree = "<group>"; };
 		37A2F3F5237CA36700C1EF3B /* DemoChevronAnimatble.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoChevronAnimatble.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37A2F3F0237BAC2A00C1EF3B /* ChevronAnimatable.framework in Frameworks */,
+				3376BA71267801150035A010 /* ChevronAnimatable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,18 +89,9 @@
 		37A2F3E6237BAC0300C1EF3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37A2F3E7237BAC1A00C1EF3B /* ChevronAnimatable.xcodeproj */,
+				3376BA6F267801080035A010 /* ChevronAnimatable */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		37A2F3E8237BAC1A00C1EF3B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				37A2F3ED237BAC1B00C1EF3B /* ChevronAnimatable.framework */,
-				37A2F3EF237BAC1B00C1EF3B /* ChevronAnimatableTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +111,9 @@
 			dependencies = (
 			);
 			name = DemoChevronAnimatble;
+			packageProductDependencies = (
+				3376BA70267801150035A010 /* ChevronAnimatable */,
+			);
 			productName = DemoChevronAnimatble;
 			productReference = 37A2F3CF237BABA000C1EF3B /* DemoChevronAnimatble.app */;
 			productType = "com.apple.product-type.application";
@@ -169,35 +144,12 @@
 			mainGroup = 37A2F3C6237BAB9F00C1EF3B;
 			productRefGroup = 37A2F3D0237BABA000C1EF3B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 37A2F3E8237BAC1A00C1EF3B /* Products */;
-					ProjectRef = 37A2F3E7237BAC1A00C1EF3B /* ChevronAnimatable.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				37A2F3CE237BABA000C1EF3B /* DemoChevronAnimatble */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		37A2F3ED237BAC1B00C1EF3B /* ChevronAnimatable.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ChevronAnimatable.framework;
-			remoteRef = 37A2F3EC237BAC1B00C1EF3B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		37A2F3EF237BAC1B00C1EF3B /* ChevronAnimatableTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChevronAnimatableTests.xctest;
-			remoteRef = 37A2F3EE237BAC1B00C1EF3B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		37A2F3CD237BABA000C1EF3B /* Resources */ = {
@@ -425,6 +377,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3376BA70267801150035A010 /* ChevronAnimatable */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ChevronAnimatable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 37A2F3C7237BAB9F00C1EF3B /* Project object */;
 }

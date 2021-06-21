@@ -15,6 +15,14 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		chevron.pointHeight = 1
+	}
+
+	@IBAction func animateButtonTapped(_ sender: UIButton) {
+		UIView.animate(withDuration: 2) {
+			self.chevron.pointHeight *= -1
+		}
 	}
 
 	@IBAction func lineWidthSliderChanged(_ sender: UISlider) {
